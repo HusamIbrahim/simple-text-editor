@@ -139,20 +139,11 @@ export default Vue.extend({
           prev.color === curr.color &&
           prev.backgroundColor === curr.backgroundColor
         ) {
-          if (i == 1) {
-            output[0] = {
-              text: `${prev.text} ${curr.text}`,
-              color: prev.color,
-              backgroundColor: prev.backgroundColor,
-              fontSize: prev.fontSize,
-            }
-          } else {
-            output.push({
-              text: `${prev.text} ${curr.text}`,
-              color: prev.color,
-              backgroundColor: prev.backgroundColor,
-              fontSize: prev.fontSize,
-            })
+          output[output.length - 1] = {
+            text: `${prev.text} ${curr.text}`,
+            color: prev.color,
+            backgroundColor: prev.backgroundColor,
+            fontSize: prev.fontSize,
           }
         } else {
           output.push(curr)
